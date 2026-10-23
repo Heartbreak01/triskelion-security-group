@@ -228,7 +228,7 @@ nav a[aria-current="page"] {
         url("assets/profil.jpg"); /* Ganti gambar jika perlu */
     
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed; /* EFEK PARALLAX */
 }
