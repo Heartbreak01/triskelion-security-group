@@ -213,6 +213,7 @@ nav a[aria-current="page"] {
 
 .page-heading {
     position: relative;
+    min-height: 850px;
     padding: 120px 0; /* Diperbesar agar gambar terlihat luas */
     color: white;
     isolation: isolate;
@@ -257,7 +258,7 @@ nav a[aria-current="page"] {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 700px; /* Tinggi proporsional */
+    min-height: 1100px; /* Tinggi proporsional */
     padding: 100px 0;
     overflow: hidden;
     isolation: isolate;
