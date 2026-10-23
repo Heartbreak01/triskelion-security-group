@@ -1,288 +1,162 @@
-
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Profil perusahaan fiktif Triskelion Security Group, visi, misi, dan nilai perusahaan."
-    >
-
+    <meta name="description" content="Profil perusahaan fiktif Triskelion Security Group, visi, misi, dan nilai perusahaan.">
     <title>Profil Perusahaan | Triskelion Security Group</title>
-
     <link rel="stylesheet" href="style.css">
+    <script src="lang.js" defer></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#konten" data-i18n="nav.skip">Lewati ke konten</a>
 
-    <!-- Skip Link -->
-    <a class="skip-link" href="#konten">
-        Lewati ke konten
-    </a>
-
-    <!-- Header dan Navigasi -->
     <header class="site-header">
         <div class="container header-inner">
-
             <a class="brand" href="index.html">
                 TRISKELION
                 <span>SECURITY GROUP</span>
             </a>
 
-            <nav aria-label="Navigasi utama">
-                <a href="index.html">Beranda</a>
-                <a href="profil.html" aria-current="page">Profil</a>
-                <a href="layanan.html">Layanan</a>
+            <nav aria-label="Navigasi utama" data-i18n-aria="nav.aria">
+                <a href="index.html" data-i18n="nav.home">Beranda</a>
+                <a href="profil.html" aria-current="page" data-i18n="nav.profile">Profil</a>
+                <a href="layanan.html" data-i18n="nav.services">Layanan</a>
             </nav>
 
+            <div class="lang-dropdown" id="lang-dropdown">
+                <button type="button" class="lang-trigger" id="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Pilih Bahasa">
+                    <img class="lang-current-flag" id="lang-current-flag" src="https://flagcdn.com/w40/id.png" alt="Indonesia" width="24" height="16">
+                    <span class="lang-current-label" id="lang-current-label">ID</span>
+                    <span class="lang-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="lang-menu" id="lang-menu" role="listbox" aria-label="Pilih Bahasa" hidden></div>
+            </div>
         </div>
     </header>
 
-    <!-- Konten Utama -->
     <main id="konten">
-
-        <!-- Judul Halaman -->
-        <section class="page-heading">
+        <section class="page-heading-profil">
             <div class="container">
-
-                <p class="eyebrow">
-                    Identitas &amp; prinsip
+                <p class="eyebrow" data-i18n="profil.page.eyebrow">Identitas &amp; prinsip</p>
+                <h1 data-i18n="profil.page.title">Profil Perusahaan</h1>
+                
+                <p data-i18n="profil.page.desc">
+                    Mengenal identitas, visi, dan nilai kerja Triskelion Security Group.
                 </p>
-
-                <h1>Profil Perusahaan</h1>
-
-                <p>
-                    Mengenal identitas, visi, dan nilai kerja
-                    Triskelion Security Group.
+                <!-- Tambahan Deskripsi Baru -->
+                <p class="desc-2" data-i18n="profil.page.desc2">
+                    Kami hadir sebagai pilar utama dalam memberikan rasa aman melalui pendekatan strategis, teknologi mutakhir, dan personel yang berdedikasi tinggi di berbagai sektor industri.
                 </p>
-
             </div>
         </section>
 
-        <!-- Tentang Triskelion dengan Background Gambar -->
         <section class="profile-hero">
-
             <div class="profile-overlay"></div>
-
             <div class="container profile-content">
-
-                <p class="eyebrow">
-                    Mengenal Triskelion
+                <p class="eyebrow" data-i18n="profil.hero.eyebrow">Mengenal Triskelion</p>
+                <h2 data-i18n="profil.hero.title">Tentang Triskelion</h2>
+                <p data-i18n="profil.hero.p1">
+                    Triskelion Security Group dibentuk oleh sekumpulan mantan anggota pasukan khusus dari Kerajaan Erdonia dengan tujuan memberikan pelayanan keamanan tingkat tinggi, khususnya bagi perusahaan yang membutuhkan pengamanan dan perlindungan ekstra dari ancaman modern.
                 </p>
-
-                <h2>Tentang Triskelion</h2>
-
-                <p>
-                    Triskelion Security Group dibentuk oleh
-                    sekumpulan mantan anggota pasukan khusus dari
-                    Kerajaan Erdonia dengan tujuan memberikan
-                    pelayanan keamanan tingkat tinggi, khususnya
-                    bagi perusahaan yang membutuhkan pengamanan
-                    dan perlindungan ekstra dari ancaman modern.
+                <p data-i18n="profil.hero.p2">
+                    Nama Triskelion merepresentasikan tiga pilar: integritas, kesiapsiagaan, dan tanggung jawab. Perusahaan berfokus pada layanan keamanan defensif serta dukungan keselamatan bagi organisasi.
                 </p>
-
-                <p>
-                    Nama Triskelion merepresentasikan tiga pilar:
-                    integritas, kesiapsiagaan, dan tanggung jawab.
-                    Perusahaan berfokus pada layanan keamanan
-                    defensif serta dukungan keselamatan bagi
-                    organisasi.
-                </p>
-
                 <div class="profile-vision">
-
-                    <h3>Visi</h3>
-
-                    <p>
-                        Menjadi mitra keamanan yang mengutamakan
-                        keselamatan manusia, profesionalisme,
-                        dan akuntabilitas.
+                    <h3 data-i18n="profil.hero.visi">Visi</h3>
+                    <p data-i18n="profil.hero.visi.desc">
+                        Menjadi mitra keamanan yang mengutamakan keselamatan manusia, profesionalisme, dan akuntabilitas.
                     </p>
-
                 </div>
-
             </div>
-
         </section>
 
-        <!-- Informasi Perusahaan -->
         <section class="section">
             <div class="container">
-
-                <p class="eyebrow">Identitas perusahaan</p>
-
-                <h2>Informasi Perusahaan</h2>
-
-                <p>
-                    Tabel berikut merupakan data profil perusahaan.
-                </p>
-
+                <p class="eyebrow" data-i18n="profil.info.eyebrow">Identitas perusahaan</p>
+                <h2 data-i18n="profil.info.title">Informasi Perusahaan</h2>
+                <p data-i18n="profil.info.desc">Tabel berikut merupakan data profil perusahaan.</p>
                 <div class="table-wrap">
-
                     <table>
-                        <caption>
-                            Identitas Triskelion Security Group
-                        </caption>
-
+                        <caption data-i18n="profil.info.caption">Identitas Triskelion Security Group</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Aspek</th>
-                                <th scope="col">Keterangan</th>
+                                <th scope="col" data-i18n="profil.info.th.aspect">Aspek</th>
+                                <th scope="col" data-i18n="profil.info.th.desc">Keterangan</th>
                             </tr>
                         </thead>
-
                         <tbody>
-
                             <tr>
-                                <th scope="row">Nama perusahaan</th>
-                                <td>Triskelion Security Group</td>
+                                <th scope="row" data-i18n="profil.info.name">Nama perusahaan</th>
+                                <td data-i18n="profil.info.name.val">Triskelion Security Group</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">Bidang usaha</th>
-                                <td>
-                                    Keamanan internasional /
-                                    Private Military Contractor
-                                </td>
+                                <th scope="row" data-i18n="profil.info.field">Bidang usaha</th>
+                                <td data-i18n="profil.info.field.val">Keamanan internasional / Private Military Contractor</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">Tahun berdiri</th>
-                                <td>1973</td>
+                                <th scope="row" data-i18n="profil.info.founded">Tahun berdiri</th>
+                                <td data-i18n="profil.info.founded.val">1973</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">Kantor pusat</th>
-                                <td>New Verdonia - Kerajaan Erdonia</td>
+                                <th scope="row" data-i18n="profil.info.hq">Kantor pusat</th>
+                                <td data-i18n="profil.info.hq.val">New Verdonia - Kerajaan Erdonia</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">Cakupan layanan</th>
-                                <td>
-                                    Asia Pasifik, Timur Tengah, Eropa,
-                                    Amerika, dan Afrika
-                                </td>
+                                <th scope="row" data-i18n="profil.info.coverage">Cakupan layanan</th>
+                                <td data-i18n="profil.info.coverage.val">Asia Pasifik, Timur Tengah, Eropa, Amerika, dan Afrika</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">Pilar perusahaan</th>
-                                <td>
-                                    Integritas, kesiapsiagaan,
-                                    dan tanggung jawab
-                                </td>
+                                <th scope="row" data-i18n="profil.info.pillars">Pilar perusahaan</th>
+                                <td data-i18n="profil.info.pillars.val">Integritas, kesiapsiagaan, dan tanggung jawab</td>
                             </tr>
-
                         </tbody>
                     </table>
-
                 </div>
-
             </div>
         </section>
 
-        <!-- Misi dan Nilai Perusahaan -->
         <section class="section white">
             <div class="container split">
-
                 <div>
-
-                    <p class="eyebrow">Prinsip perusahaan</p>
-
-                    <h2>Misi &amp; Nilai</h2>
-
+                    <p class="eyebrow" data-i18n="profil.misi.eyebrow">Prinsip perusahaan</p>
+                    <h2 data-i18n="profil.misi.title">Misi &amp; Nilai</h2>
                     <ul class="values">
-
-                        <li>
-                            Mengutamakan keselamatan personel
-                            dan masyarakat.
-                        </li>
-
-                        <li>
-                            Menyusun rencana pengamanan sesuai
-                            kebutuhan organisasi.
-                        </li>
-
-                        <li>
-                            Mendorong kepatuhan hukum dan
-                            penghormatan hak asasi manusia.
-                        </li>
-
-                        <li>
-                            Menjaga kerahasiaan informasi dan
-                            akuntabilitas layanan.
-                        </li>
-
+                        <li data-i18n="profil.misi.li1">Mengutamakan keselamatan personel dan masyarakat.</li>
+                        <li data-i18n="profil.misi.li2">Menyusun rencana pengamanan sesuai kebutuhan organisasi.</li>
+                        <li data-i18n="profil.misi.li3">Mendorong kepatuhan hukum dan penghormatan hak asasi manusia.</li>
+                        <li data-i18n="profil.misi.li4">Menjaga kerahasiaan informasi dan akuntabilitas layanan.</li>
                     </ul>
-
                 </div>
-
-                <!-- Kontak Simulasi -->
                 <div class="contact-box" id="kontak">
-
-                    <h2>Kontak Simulasi</h2>
-
+                    <h2 data-i18n="profil.kontak.title">Kontak Simulasi</h2>
                     <address>
-                        Menara Triskelion Corporation,
-                        Jakarta, Indonesia
+                        <span data-i18n="profil.kontak.address">Menara Triskelion Corporation, Jakarta, Indonesia</span>
                         <br><br>
-
-                        Email:
-                        <a href="mailto:info@triskelion.example">
-                            info@triskelion.example
-                        </a>
+                        <span data-i18n="profil.kontak.email">Email:</span>
+                        <a href="mailto:info@triskelion.example">info@triskelion.example</a>
                     </address>
-
-                    <p>
-                        Alamat dan email ini hanya contoh;
-                        bukan kontak layanan nyata.
-                    </p>
-
-                    <a class="button" href="layanan.html">
-                        Jelajahi Layanan
-                    </a>
-
+                    <p data-i18n="profil.kontak.note">Alamat dan email ini hanya contoh; bukan kontak layanan nyata.</p>
+                    <a class="button" href="layanan.html" data-i18n="profil.kontak.cta">Jelajahi Layanan</a>
                 </div>
-
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-inner">
-
             <div>
-
-                <p>
-                    © 2026 Triskelion Security Group —
-                    proyek akademik.
-                </p>
-
-                <p>
-                    Perusahaan, alamat, dan data pada website
-                    ini bersifat fiktif.
-                </p>
-
+                <p data-i18n="footer.copy">© 2026 Triskelion Security Group — A Triskelion Corporation Subsidiaries.</p>
+                <p data-i18n="footer.credit">Created by Heartbreak_0_1 / Jean Michel</p>
             </div>
-
             <p>
-                <a href="profil.html#kontak">
-                    Kontak simulasi
-                </a>
-
+                <a href="profil.html#kontak" data-i18n="footer.contact">Kontak simulasi</a>
                 ·
-
-                <a href="layanan.html">
-                    Layanan
-                </a>
+                <a href="layanan.html" data-i18n="footer.services">Layanan</a>
             </p>
-
         </div>
     </footer>
-
 </body>
 </html>

@@ -12,12 +12,14 @@
     <title>Beranda | Triskelion Security Group</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lang-styles.css">
+    <script src="lang.js" defer></script>
 </head>
 
 <body>
 
     <!-- Skip Link -->
-    <a class="skip-link" href="#konten">
+    <a class="skip-link" href="#konten" data-i18n="nav.skip">
         Lewati ke konten
     </a>
 
@@ -30,11 +32,26 @@
                 <span>SECURITY GROUP</span>
             </a>
 
-            <nav aria-label="Navigasi utama">
-                <a href="index.html" aria-current="page">Beranda</a>
-                <a href="profil.html">Profil</a>
-                <a href="layanan.html">Layanan</a>
+            <nav aria-label="Navigasi utama" data-i18n-aria="nav.aria">
+                <a href="index.html" aria-current="page" data-i18n="nav.home">Beranda</a>
+                <a href="profil.html" data-i18n="nav.profile">Profil</a>
+                <a href="layanan.html" data-i18n="nav.services">Layanan</a>
             </nav>
+
+            <div class="lang-dropdown" id="lang-dropdown">
+    <button type="button" class="lang-trigger" id="lang-trigger"
+            aria-haspopup="listbox" aria-expanded="false"
+            aria-label="Pilih Bahasa">
+        <img class="lang-current-flag" id="lang-current-flag"
+             src="https://flagcdn.com/w40/id.png" alt="Indonesia"
+             width="24" height="16">
+        <span class="lang-current-label" id="lang-current-label">ID</span>
+        <span class="lang-caret" aria-hidden="true">▾</span>
+    </button>
+
+    <div class="lang-menu" id="lang-menu" role="listbox"
+         aria-label="Pilih Bahasa" hidden></div>
+</div>
 
         </div>
     </header>
@@ -55,22 +72,22 @@
 
             <div class="container hero-content">
 
-                <p class="eyebrow">International security partner</p>
+                <p class="eyebrow" data-i18n="hero.eyebrow">Mitra keamanan internasional</p>
 
                 <h1>
-                    Keamanan terencana.<br>
-                    Perlindungan berintegritas.
+                    <span data-i18n="hero.title1">Keamanan terencana.</span><br>
+                    <span data-i18n="hero.title2">Perlindungan berintegritas.</span>
                 </h1>
 
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.desc">
                     Triskelion Security Group adalah perusahaan
-                    fiktif di bidang keamanan internasional dan
+                    yang bergerak di bidang keamanan internasional dan
                     Private Military Contractor (PMC), dengan
                     fokus pada perlindungan personel, pengamanan
                     fasilitas, dan konsultasi risiko.
                 </p>
 
-                <a class="button" href="profil.html">
+                <a class="button" href="profil.html" data-i18n="hero.cta">
                     Kenali Perusahaan
                 </a>
 
@@ -84,24 +101,23 @@
             <div class="container split">
 
                 <div>
-                    <p class="eyebrow">Tentang kami</p>
+                    <p class="eyebrow" data-i18n="about.eyebrow">Tentang kami</p>
 
-                    <h2>
+                    <h2 data-i18n="about.title">
                         Mendukung aktivitas di lingkungan
                         yang menantang.
                     </h2>
                 </div>
 
                 <div>
-                    <p>
-                        Dalam skenario perusahaan ini, Triskelion
-                        membantu organisasi internasional,
+                    <p data-i18n="about.p1">
+                        Triskelion membantu organisasi internasional,
                         perusahaan, dan lembaga kemanusiaan
                         merencanakan kebutuhan keamanan dengan
                         pendekatan yang terukur.
                     </p>
 
-                    <p>
+                    <p data-i18n="about.p2">
                         Ruang lingkup profil meliputi asesmen risiko,
                         perlindungan defensif, dukungan logistik,
                         dan pelatihan keselamatan. Seluruh layanan
@@ -117,16 +133,16 @@
         <section class="section capabilities-bg">
             <div class="container">
 
-                <p class="eyebrow">Kapabilitas utama</p>
+                <p class="eyebrow" data-i18n="cap.eyebrow">Kapabilitas utama</p>
 
-                <h2>Perlindungan yang terintegrasi</h2>
+                <h2 data-i18n="cap.title">Perlindungan yang terintegrasi</h2>
 
                 <div class="cards">
 
                     <article class="card">
-                        <span class="number">01 / PROTECTION</span>
-                        <h3>Pengamanan Personel</h3>
-                        <p>
+                        <span class="number" data-i18n="cap.card1.num">01 / PERLINDUNGAN</span>
+                        <h3 data-i18n="cap.card1.title">Pengamanan Personel</h3>
+                        <p data-i18n="cap.card1.desc">
                             Perencanaan perlindungan personel dan
                             pendampingan perjalanan untuk kebutuhan
                             organisasi.
@@ -134,9 +150,9 @@
                     </article>
 
                     <article class="card">
-                        <span class="number">02 / RISK</span>
-                        <h3>Konsultasi Risiko</h3>
-                        <p>
+                        <span class="number" data-i18n="cap.card2.num">02 / RISIKO</span>
+                        <h3 data-i18n="cap.card2.title">Konsultasi Risiko</h3>
+                        <p data-i18n="cap.card2.desc">
                             Identifikasi risiko dan penyusunan
                             rekomendasi keamanan bagi fasilitas
                             maupun kegiatan.
@@ -144,9 +160,9 @@
                     </article>
 
                     <article class="card">
-                        <span class="number">03 / READINESS</span>
-                        <h3>Pelatihan Keselamatan</h3>
-                        <p>
+                        <span class="number" data-i18n="cap.card3.num">03 / KESIAPSIAGAAN</span>
+                        <h3 data-i18n="cap.card3.title">Pelatihan Keselamatan</h3>
+                        <p data-i18n="cap.card3.desc">
                             Program kesadaran situasional,
                             komunikasi darurat, dan kesiapsiagaan
                             keselamatan.
@@ -155,15 +171,10 @@
 
                 </div>
 
-                <a class="button" href="layanan.html">
+                <a class="button" href="layanan.html" data-i18n="cap.cta">
                     Lihat Rincian Layanan
                 </a>
 
-                <aside class="notice">
-                    Website ini dibuat untuk tugas HTML dan CSS.
-                    Seluruh informasi perusahaan merupakan simulasi,
-                    bukan penawaran jasa nyata.
-                </aside>
 
             </div>
         </section>
@@ -175,17 +186,16 @@
         <div class="container footer-inner">
 
             <div>
-                <p>© 2026 Triskelion Security Group — proyek akademik.</p>
-                <p>
-                    Perusahaan, alamat, dan data pada website
-                    ini bersifat fiktif.
+                <p data-i18n="footer.copy">© 2026 Triskelion Security Group — A Triskelion Corporation Subsidiaries.</p>
+                <p data-i18n="footer.credit">
+                    Created by Heartbreak_0_1 / Jean Michel
                 </p>
             </div>
 
             <p>
-                <a href="profil.html#kontak">Kontak simulasi</a>
+                <a href="profil.html#kontak" data-i18n="footer.contact">Kontak simulasi</a>
                 ·
-                <a href="layanan.html">Layanan</a>
+                <a href="layanan.html" data-i18n="footer.services">Layanan</a>
             </p>
 
         </div>

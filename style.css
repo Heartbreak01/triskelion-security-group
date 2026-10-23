@@ -22,7 +22,9 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    line-height: 1.7;
+    /* Font dasar diperbesar dari 1.7 menjadi 1.8 */
+    font-size: 18px;
+    line-height: 1.8;
     background: var(--paper);
 }
 
@@ -69,7 +71,7 @@ a:focus-visible {
 
 .site-header {
     position: relative;
-    z-index: 10;
+    z-index: 100;
     background: var(--dark);
     color: white;
     border-bottom: 3px solid var(--gold);
@@ -81,12 +83,13 @@ a:focus-visible {
     align-items: center;
     gap: 24px;
     padding: 20px 0;
+    flex-wrap: wrap;
 }
 
 .brand {
     color: white;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 24px; /* Diperbesar */
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1.3;
@@ -95,7 +98,7 @@ a:focus-visible {
 .brand span {
     display: block;
     color: var(--gold);
-    font-size: 11px;
+    font-size: 13px; /* Diperbesar */
     letter-spacing: 3px;
 }
 
@@ -108,7 +111,8 @@ nav {
 nav a {
     color: #e4e9ed;
     text-decoration: none;
-    padding: 8px 14px;
+    padding: 10px 16px; /* Padding ditambah */
+    font-size: 17px; /* Diperbesar */
     border-radius: 3px;
     transition: background 0.2s ease;
 }
@@ -149,22 +153,12 @@ nav a[aria-current="page"] {
     background-repeat: no-repeat;
     opacity: 0;
     transform: scale(1);
-    transition:
-        opacity 1.5s ease-in-out,
-        transform 7s linear;
+    transition: opacity 1.5s ease-in-out, transform 7s linear;
 }
 
-.hero-slide.slide-1 {
-    background-image: url("assets/Triskelion.jpg");
-}
-
-.hero-slide.slide-2 {
-    background-image: url("assets/Triskelion-2.jpg");
-}
-
-.hero-slide.slide-3 {
-    background-image: url("assets/Triskelion-3.jpg");
-}
+.hero-slide.slide-1 { background-image: url("./assets/Triskelion.jpg"); }
+.hero-slide.slide-2 { background-image: url("./assets/Triskelion-2.jpg"); }
+.hero-slide.slide-3 { background-image: url("./assets/Triskelion-3.jpg"); }
 
 .hero-slide.active {
     opacity: 1;
@@ -176,13 +170,7 @@ nav a[aria-current="page"] {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: linear-gradient(
-        90deg,
-        rgba(9, 19, 27, 0.94) 0%,
-        rgba(9, 19, 27, 0.78) 38%,
-        rgba(9, 19, 27, 0.40) 68%,
-        rgba(9, 19, 27, 0.20) 100%
-    );
+    background: linear-gradient(90deg, rgba(9, 19, 27, 0.94) 0%, rgba(9, 19, 27, 0.78) 38%, rgba(9, 19, 27, 0.40) 68%, rgba(9, 19, 27, 0.20) 100%);
 }
 
 .hero-content {
@@ -193,92 +181,123 @@ nav a[aria-current="page"] {
 }
 
 .hero h1 {
-    max-width: 720px;
-    font-size: clamp(36px, 5vw, 58px);
-    line-height: 1.12;
+    max-width: 800px;
+    font-size: clamp(40px, 6vw, 68px); /* Diperbesar */
+    line-height: 1.1;
     margin: 18px 0 24px;
     color: white;
 }
 
 .hero .hero-description {
-    max-width: 520px;
+    max-width: 580px;
     color: #e1e8ed;
-    font-size: 17px;
+    font-size: 19px; /* Diperbesar */
     line-height: 1.85;
 }
 
 /* =========================================
-   5. JUDUL HALAMAN (Profil/Layanan) - PARALLAX
+   5. JUDUL HALAMAN - PROFIL (Terpisah)
 ========================================= */
 
-.page-heading {
+.page-heading-profil {
     position: relative;
-    min-height: 850px;
-    padding: 120px 0; /* Diperbesar agar gambar terlihat luas */
+    min-height: 1100px;
+    padding: 120px 0;
     color: white;
     isolation: isolate;
-
-    /* Background Gambar + Overlay Gelap */
     background-color: var(--navy);
     background-image:
-        linear-gradient(
-            rgba(9, 19, 27, 0.85),
-            rgba(9, 19, 27, 0.85)
-        ),
-        url("assets/profil.jpg"); /* Ganti gambar jika perlu */
-    
+        linear-gradient(90deg, rgba(9, 19, 27, 0.70) 0%, rgba(9, 19, 27, 0.55) 50%, rgba(9, 19, 27, 0.40) 100%),
+        url("./assets/profil.jpg"); 
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* EFEK PARALLAX */
+    background-attachment: fixed;
 }
 
-.page-heading h1 {
-    font-size: 40px;
-    line-height: 1.3;
-    margin: 14px 0 20px;
+.page-heading-profil h1 {
+    font-size: 52px; /* Diperbesar */
+    line-height: 1.2;
+    margin: 14px 0 24px;
     color: white;
 }
 
-.page-heading .eyebrow {
+.page-heading-profil .eyebrow {
     color: var(--gold);
+    font-size: 15px;
 }
 
-.page-heading p:last-child {
-    max-width: 720px;
+.page-heading-profil p:last-child,
+.page-heading-profil p.desc-2 {
+    max-width: 800px;
     color: #d4dfe6;
-    font-size: 18px;
+    font-size: 20px; /* Diperbesar */
+    line-height: 1.8;
+    margin-bottom: 14px;
 }
 
 /* =========================================
-   6. HERO PROFIL PERUSAHAAN - PARALLAX
+   6. JUDUL HALAMAN - LAYANAN (Terpisah)
+========================================= */
+
+.page-heading-layanan {
+    position: relative;
+    min-height: 1100px;
+    padding: 120px 0;
+    color: white;
+    isolation: isolate;
+    background-color: var(--navy);
+    background-image:
+        linear-gradient(90deg, rgba(9, 19, 27, 0.70) 0%, rgba(9, 19, 27, 0.55) 50%, rgba(9, 19, 27, 0.40) 100%),
+        url("./assets/layanan-judul.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-heading-layanan h1 {
+    font-size: 52px; /* Diperbesar */
+    line-height: 1.2;
+    margin: 14px 0 24px;
+    color: white;
+}
+
+.page-heading-layanan .eyebrow {
+    color: var(--gold);
+    font-size: 15px;
+}
+
+.page-heading-layanan p:last-child,
+.page-heading-layanan p.desc-2 {
+    max-width: 800px;
+    color: #d4dfe6;
+    font-size: 20px; /* Diperbesar */
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   7. HERO PROFIL PERUSAHAAN (Parallax)
 ========================================= */
 
 .profile-hero {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 1100px; /* Tinggi proporsional */
+    min-height: 1100px;
     padding: 100px 0;
     overflow: hidden;
     isolation: isolate;
     color: white;
-
-    /* Background Gambar + Overlay Gradien */
     background-color: var(--navy);
     background-image:
-        linear-gradient(
-            90deg,
-            rgba(9, 19, 27, 0.90) 0%,
-            rgba(9, 19, 27, 0.75) 50%,
-            rgba(9, 19, 27, 0.40) 100%
-        ),
-        url("assets/profil-about.jpg"); /* Pastikan nama file sesuai */
-
+        linear-gradient(90deg, rgba(9, 19, 27, 0.70) 0%, rgba(9, 19, 27, 0.55) 50%, rgba(9, 19, 27, 0.40) 100%),
+        url("./assets/profil-about.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* EFEK PARALLAX */
+    background-attachment: fixed;
 }
 
 .profile-overlay {
@@ -286,11 +305,7 @@ nav a[aria-current="page"] {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: linear-gradient(
-        0deg,
-        rgba(9, 19, 27, 0.50),
-        transparent 50%
-    );
+    background: linear-gradient(0deg, rgba(9, 19, 27, 0.50), transparent 50%);
 }
 
 .profile-content {
@@ -301,23 +316,23 @@ nav a[aria-current="page"] {
 }
 
 .profile-content h2 {
-    max-width: 750px;
+    max-width: 800px;
     color: white;
-    font-size: clamp(36px, 5vw, 54px);
+    font-size: clamp(40px, 6vw, 60px); /* Diperbesar */
     line-height: 1.15;
     margin: 16px 0 28px;
 }
 
 .profile-content > p:not(.eyebrow) {
-    max-width: 700px;
+    max-width: 800px;
     color: #e1e8ed;
-    font-size: 17px;
+    font-size: 19px; /* Diperbesar */
     line-height: 1.9;
     margin-bottom: 18px;
 }
 
 .profile-vision {
-    max-width: 700px;
+    max-width: 800px;
     margin-top: 30px;
     padding-left: 20px;
     border-left: 3px solid var(--gold);
@@ -325,28 +340,29 @@ nav a[aria-current="page"] {
 
 .profile-vision h3 {
     color: var(--gold);
-    font-size: 22px;
+    font-size: 26px; /* Diperbesar */
     margin: 0 0 8px;
 }
 
 .profile-vision p {
     color: #e1e8ed;
     margin: 0;
+    font-size: 19px; /* Diperbesar */
     line-height: 1.8;
 }
 
 /* =========================================
-   7. TOMBOL
+   8. TOMBOL
 ========================================= */
 
 .button {
     display: inline-block;
     background: var(--gold);
     color: var(--dark);
-    padding: 13px 24px;
+    padding: 14px 28px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px; /* Diperbesar */
     border-radius: 3px;
     margin-top: 18px;
     transition: background 0.2s ease;
@@ -357,7 +373,7 @@ nav a[aria-current="page"] {
 }
 
 /* =========================================
-   8. BAGIAN UMUM
+   9. BAGIAN UMUM
 ========================================= */
 
 .section {
@@ -369,18 +385,19 @@ nav a[aria-current="page"] {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 38px; /* Diperbesar */
     line-height: 1.3;
     margin-top: 0;
     color: var(--navy);
 }
 
 h3 {
+    font-size: 26px; /* Diperbesar */
     line-height: 1.35;
 }
 
 .eyebrow {
-    font-size: 13px;
+    font-size: 15px; /* Diperbesar */
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 700;
@@ -397,55 +414,45 @@ h3 {
 .split p {
     margin-top: 0;
     margin-bottom: 16px;
-    font-size: 17px;
+    font-size: 19px; /* Diperbesar */
     line-height: 1.8;
 }
 
 /* =========================================
-   9. SECTION DENGAN BACKGROUND GAMBAR
-   (Tentang Kami & Kapabilitas Utama)
+   10. SECTION BACKGROUND GAMBAR (Beranda)
 ========================================= */
 
 .about-bg,
 .capabilities-bg {
     position: relative;
     color: white;
-    min-height: 900px;
+    min-height: 1100px;
     display: flex;
     align-items: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* EFEK PARALLAX */
+    background-attachment: fixed;
 }
 
-/* -- Tentang Kami -- */
 .about-bg {
     background-color: var(--navy);
     background-image:
-        linear-gradient(
-            rgba(16, 31, 43, 0.60),
-            rgba(16, 31, 43, 0.60)
-        ),
-        url("assets/about.jpg");
+        linear-gradient(rgba(16, 31, 43, 0.60), rgba(16, 31, 43, 0.60)),
+        url("./assets/about.jpg");
 }
 
-/* -- Kapabilitas Utama -- */
 .capabilities-bg {
     background-color: var(--dark);
     background-image:
-        linear-gradient(
-            rgba(16, 31, 43, 0.60),
-            rgba(16, 31, 43, 0.60)
-        ),
-        url("assets/Kapabilitas.jpg");
+        linear-gradient(rgba(16, 31, 43, 0.60), rgba(16, 31, 43, 0.60)),
+        url("./assets/Kapabilitas.jpg");
 }
 
-/* Warna teks di atas background gelap */
 .about-bg h2,
 .capabilities-bg h2 {
     color: white;
-    font-size: 38px;
+    font-size: 44px; /* Diperbesar */
     line-height: 1.2;
 }
 
@@ -457,12 +464,12 @@ h3 {
 .about-bg p,
 .capabilities-bg p {
     color: #dce3e7;
-    font-size: 17px;
+    font-size: 19px; /* Diperbesar */
     line-height: 1.85;
 }
 
 /* =========================================
-   10. KARTU KAPABILITAS
+   11. KARTU KAPABILITAS (Beranda)
 ========================================= */
 
 .cards {
@@ -483,23 +490,22 @@ h3 {
 .card h3 {
     margin-top: 10px;
     margin-bottom: 12px;
-    font-size: 22px;
+    font-size: 26px; /* Diperbesar */
 }
 
 .card p {
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: 18px; /* Diperbesar */
     line-height: 1.75;
 }
 
 .number {
-    font-size: 13px;
+    font-size: 15px; /* Diperbesar */
     color: #77551e;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
-/* Kartu transparan (glass) khusus di area Kapabilitas */
 .capabilities-bg .card {
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(8px);
@@ -509,20 +515,12 @@ h3 {
     color: white;
 }
 
-.capabilities-bg .card h3 {
-    color: var(--gold);
-}
-
-.capabilities-bg .card p {
-    color: #e1e8ed;
-}
-
-.capabilities-bg .card .number {
-    color: #f0d9a8;
-}
+.capabilities-bg .card h3 { color: var(--gold); }
+.capabilities-bg .card p { color: #e1e8ed; }
+.capabilities-bg .card .number { color: #f0d9a8; }
 
 /* =========================================
-   11. PEMBERITAHUAN
+   12. PEMBERITAHUAN & TABEL
 ========================================= */
 
 .notice {
@@ -530,13 +528,9 @@ h3 {
     border-left: 4px solid #987131;
     padding: 18px 22px;
     margin-top: 32px;
-    font-size: 15px;
+    font-size: 17px; /* Diperbesar */
     color: var(--text);
 }
-
-/* =========================================
-   12. TABEL INFORMASI PERUSAHAAN
-========================================= */
 
 .table-wrap {
     overflow-x: auto;
@@ -554,13 +548,14 @@ caption {
     text-align: left;
     padding: 18px;
     font-weight: bold;
+    font-size: 20px; /* Diperbesar */
     color: var(--navy);
 }
 
-th,
-td {
-    padding: 16px;
+th, td {
+    padding: 18px; /* Diperbesar padding */
     text-align: left;
+    font-size: 18px; /* Diperbesar */
     border-bottom: 1px solid #dce3e7;
 }
 
@@ -577,23 +572,16 @@ tbody tr:nth-child(even) {
    13. MISI, NILAI, DAN KONTAK
 ========================================= */
 
-figure {
-    margin: 0;
-}
+figure { margin: 0; }
 
 figcaption {
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 10px;
     color: #536773;
 }
 
-.values {
-    padding-left: 22px;
-}
-
-.values li {
-    margin-bottom: 10px;
-}
+.values { padding-left: 22px; }
+.values li { margin-bottom: 12px; font-size: 19px; }
 
 .contact-box {
     padding: 30px;
@@ -601,9 +589,7 @@ figcaption {
     border: 1px solid #dce3e7;
 }
 
-address {
-    font-style: normal;
-}
+address { font-style: normal; font-size: 18px; }
 
 /* =========================================
    14. KARTU KHUSUS HALAMAN LAYANAN
@@ -646,28 +632,28 @@ address {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 25px;
+    padding: 28px;
 }
 
 #daftar-layanan .card-number {
     display: block;
     margin-bottom: 12px;
     color: #77551e;
-    font-size: 11px;
+    font-size: 13px; /* Diperbesar */
     font-weight: 700;
     letter-spacing: 1.5px;
 }
 
 #daftar-layanan h3 {
-    margin: 0 0 14px;
+    margin: 0 0 16px;
     color: var(--navy);
-    font-size: 22px;
+    font-size: 24px; /* Diperbesar */
 }
 
 #daftar-layanan .service-content p {
     margin: 0 0 24px;
     color: #536773;
-    font-size: 14px;
+    font-size: 17px; /* Diperbesar */
 }
 
 #daftar-layanan .service-content a {
@@ -678,24 +664,57 @@ address {
     padding-top: 16px;
     border-top: 1px solid #dde3e6;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px; /* Diperbesar */
     font-weight: 700;
 }
 
 /* =========================================
-   15. FOOTER
+   15. BACKGROUND LAYANAN (PARALLAX)
+========================================= */
+
+.layanan-bg {
+    position: relative;
+    color: white;
+    min-height: 1100px;
+    display: flex;
+    align-items: center;
+    background-color: var(--navy);
+    background-image:
+        linear-gradient(90deg, rgba(9, 19, 27, 0.70) 0%, rgba(9, 19, 27, 0.55) 50%, rgba(9, 19, 27, 0.40) 100%),
+        url("./assets/layanan-bg.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.layanan-bg h2,
+.layanan-bg h2 + p {
+    color: white;
+}
+
+.layanan-bg .eyebrow {
+    color: var(--gold);
+}
+
+.layanan-bg .service-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* =========================================
+   16. FOOTER
 ========================================= */
 
 .site-footer {
     background: var(--dark);
     color: #c8d4db;
     padding: 30px 0;
-    font-size: 13px;
+    font-size: 15px; /* Diperbesar */
 }
 
-.site-footer a {
-    color: var(--gold);
-}
+.site-footer a { color: var(--gold); }
 
 .footer-inner {
     display: flex;
@@ -703,170 +722,193 @@ address {
     gap: 24px;
 }
 
-.site-footer p {
-    margin: 4px 0;
-}
+.site-footer p { margin: 6px 0; }
 
 /* =========================================
-   16. RESPONSIVE (TABLET & HP)
+   17. RESPONSIVE (TABLET & HP)
 ========================================= */
 
 @media (max-width: 900px) {
-    .about-bg,
-    .capabilities-bg {
-        min-height: 700px;
-    }
-
-    .about-bg h2,
-    .capabilities-bg h2 {
-        font-size: 32px;
-    }
+    .about-bg, .capabilities-bg { min-height: 700px; }
+    .about-bg h2, .capabilities-bg h2 { font-size: 34px; }
 }
 
 @media (max-width: 760px) {
+    .header-inner, .footer-inner { flex-direction: column; align-items: flex-start; }
+    nav { width: 100%; }
 
-    .header-inner,
-    .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        width: 100%;
-    }
-
-    /* Hero Beranda */
     .hero {
         min-height: 600px;
         padding: 60px 0;
         background-position: center;
     }
 
-    .hero-overlay {
-        background: linear-gradient(
-            90deg,
-            rgba(9, 19, 27, 0.92),
-            rgba(9, 19, 27, 0.60)
-        );
-    }
+    .hero-overlay { background: linear-gradient(90deg, rgba(9, 19, 27, 0.92), rgba(9, 19, 27, 0.60)); }
+    .hero h1 { font-size: clamp(34px, 8vw, 46px); }
+    .hero .hero-description { font-size: 17px; }
 
-    .hero h1 {
-        font-size: clamp(34px, 8vw, 46px);
-    }
-
-    .hero .hero-description {
-        font-size: 15px;
-    }
-
-    /* Judul Halaman (Profil) */
-    .page-heading {
+    .page-heading-profil, .page-heading-layanan {
         padding: 80px 0;
-        background-attachment: scroll; /* Matikan parallax di HP */
+        min-height: auto;
+        background-attachment: scroll;
     }
+    .page-heading-profil h1, .page-heading-layanan h1 { font-size: 36px; }
+    .page-heading-profil p:last-child, .page-heading-layanan p:last-child,
+    .page-heading-profil p.desc-2, .page-heading-layanan p.desc-2 { font-size: 18px; }
 
-    .page-heading h1 {
-        font-size: 32px;
-    }
-
-    .page-heading p:last-child {
-        font-size: 16px;
-    }
-
-    /* Profil Hero */
     .profile-hero {
         min-height: auto;
         padding: 80px 0;
-        background-attachment: scroll; /* Matikan parallax di HP */
-        background-image:
-            linear-gradient(
-                90deg,
-                rgba(9, 19, 27, 0.92),
-                rgba(9, 19, 27, 0.75)
-            ),
-            url("assets/Triskelion\ Profile.jpg");
+        background-attachment: scroll;
+        background-image: linear-gradient(90deg, rgba(9, 19, 27, 0.92), rgba(9, 19, 27, 0.75)), url("./assets/Triskelion\ Profile.jpg");
         background-position: center;
     }
 
-    .profile-content h2 {
-        font-size: clamp(32px, 8vw, 44px);
-    }
+    .profile-content h2 { font-size: clamp(32px, 8vw, 44px); }
+    .profile-content > p:not(.eyebrow) { font-size: 17px; }
 
-    .profile-content > p:not(.eyebrow) {
-        font-size: 15px;
-    }
-
-    /* Section dengan background gambar */
-    .about-bg,
-    .capabilities-bg {
+    .about-bg, .capabilities-bg {
         min-height: auto;
         padding: 80px 0;
-        background-attachment: scroll; /* Matikan parallax di HP */
+        background-attachment: scroll;
     }
+    .about-bg h2, .capabilities-bg h2 { font-size: 32px; }
+    .about-bg p, .capabilities-bg p { font-size: 17px; }
 
-    .about-bg h2,
-    .capabilities-bg h2 {
-        font-size: 30px;
-    }
+    .section { padding: 50px 0; }
+    h2 { font-size: 30px; }
+    .split, .cards { grid-template-columns: 1fr; gap: 24px; }
+    .split p { font-size: 17px; }
+    .card { padding: 26px; }
 
-    .about-bg p,
-    .capabilities-bg p {
-        font-size: 15px;
-    }
+    #daftar-layanan .cards { grid-template-columns: minmax(0, 1fr); }
+    .contact-box { padding: 22px; }
 
-    /* Umum */
-    .section {
-        padding: 50px 0;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    .split,
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .split p {
-        font-size: 16px;
-    }
-
-    .card {
-        padding: 26px;
-    }
-
-    #daftar-layanan .cards {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .contact-box {
-        padding: 22px;
+    .layanan-bg {
+        min-height: auto;
+        padding: 60px 0;
+        background-attachment: scroll; 
     }
 }
 
 /* =========================================
-   17. PENGATURAN ANIMASI
+   18. PENGATURAN ANIMASI
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-slide, .hero-slide.active { transition: none; transform: none; }
+    .button, #daftar-layanan .service-card { transition: none; }
+    #daftar-layanan .service-card:hover { transform: none; }
+}
 
-    html {
-        scroll-behavior: auto;
-    }
+/* =========================================
+   19. LANGUAGE DROPDOWN
+========================================= */
 
-    .hero-slide,
-    .hero-slide.active {
-        transition: none;
-        transform: none;
-    }
+.lang-dropdown {
+    position: relative;
+    margin-left: auto;
+    z-index: 100;
+}
 
-    .button,
-    #daftar-layanan .service-card {
-        transition: none;
-    }
+.lang-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border: 1px solid rgba(209, 175, 107, 0.45);
+    border-radius: 5px;
+    padding: 8px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
 
-    #daftar-layanan .service-card:hover {
-        transform: none;
-    }
+.lang-trigger:hover, .lang-trigger:focus-visible {
+    background: rgba(209, 175, 107, 0.22);
+    border-color: var(--gold);
+    outline: none;
+}
+
+.lang-trigger .lang-current-flag {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+    display: block;
+}
+
+.lang-trigger .lang-current-label { color: var(--gold); min-width: 22px; text-align: left; }
+.lang-trigger .lang-caret { font-size: 12px; color: #c8d4db; transition: transform 0.2s ease; }
+.lang-dropdown.open .lang-caret { transform: rotate(180deg); }
+
+.lang-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 999;
+    min-width: 240px;
+    max-height: 350px;
+    overflow-y: auto;
+    background: var(--dark);
+    border: 1px solid rgba(209, 175, 107, 0.35);
+    border-radius: 6px;
+    padding: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lang-menu[hidden] { display: none !important; }
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: #e1e8ed;
+    font-family: inherit;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-option:hover, .lang-option:focus-visible {
+    background: rgba(209, 175, 107, 0.18);
+    color: white;
+    outline: none;
+}
+
+.lang-option.active { background: var(--gold); color: var(--dark); }
+.lang-option.active .lang-code { color: var(--dark); opacity: 0.75; }
+
+.lang-option .lang-flag {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+    flex-shrink: 0;
+    display: block;
+}
+
+.lang-option .lang-name { flex: 1; text-align: left; }
+.lang-option .lang-code { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--gold); opacity: 0.85; }
+
+.lang-menu::-webkit-scrollbar { width: 6px; }
+.lang-menu::-webkit-scrollbar-thumb { background: rgba(209, 175, 107, 0.4); border-radius: 3px; }
+
+@media (max-width: 760px) {
+    .lang-dropdown { width: 100%; margin-top: 10px; margin-left: 0; }
+    .lang-trigger { width: 100%; justify-content: space-between; }
+    .lang-menu { left: 0; right: 0; min-width: 0; }
 }

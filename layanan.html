@@ -1,322 +1,171 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Layanan | Triskelion Security Group</title>
-
     <link rel="stylesheet" href="style.css">
+    <script src="lang.js" defer></script>
 </head>
-
 <body>
-    <a class="skip-link" href="#konten">
-        Lewati ke konten
-    </a>
+    <a class="skip-link" href="#konten" data-i18n="nav.skip">Lewati ke konten</a>
 
-    <!-- Header -->
     <header class="site-header">
         <div class="container header-inner">
-
             <a class="brand" href="index.html">
                 TRISKELION
                 <span>SECURITY GROUP</span>
             </a>
 
-            <nav aria-label="Navigasi utama">
-                <a href="index.html">Beranda</a>
-                <a href="profil.html">Profil</a>
-                <a href="layanan.html" aria-current="page">
-                    Layanan
-                </a>
+            <nav aria-label="Navigasi utama" data-i18n-aria="nav.aria">
+                <a href="index.html" data-i18n="nav.home">Beranda</a>
+                <a href="profil.html" data-i18n="nav.profile">Profil</a>
+                <a href="layanan.html" aria-current="page" data-i18n="nav.services">Layanan</a>
             </nav>
 
+            <div class="lang-dropdown" id="lang-dropdown">
+                <button type="button" class="lang-trigger" id="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Pilih Bahasa">
+                    <img class="lang-current-flag" id="lang-current-flag" src="https://flagcdn.com/w40/id.png" alt="Indonesia" width="24" height="16">
+                    <span class="lang-current-label" id="lang-current-label">ID</span>
+                    <span class="lang-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="lang-menu" id="lang-menu" role="listbox" aria-label="Pilih Bahasa" hidden></div>
+            </div>
         </div>
     </header>
 
-    <!-- Konten Utama -->
     <main id="konten">
-
-        <!-- Judul Halaman -->
-        <section class="page-heading">
+        <section class="page-heading-layanan">
             <div class="container">
-
-                <p class="eyebrow">
-                    Layanan &amp; Kesiapsiagaan
+                <p class="eyebrow" data-i18n="layanan.page.eyebrow">Layanan &amp; Kesiapsiagaan</p>
+                <h1 data-i18n="layanan.page.title">Solusi Keamanan</h1>
+                
+                <p data-i18n="layanan.page.desc">
+                    Perlindungan personel, fasilitas, dan keberlangsungan kegiatan organisasi.
                 </p>
-
-                <h1>Solusi Keamanan</h1>
-
-                <p>
-                    Perlindungan personel, fasilitas, dan
-                    keberlangsungan kegiatan organisasi.
+                <!-- Tambahan Deskripsi Baru -->
+                <p class="desc-2" data-i18n="layanan.page.desc2">
+                    Dirancang untuk menghadapi tantangan dinamika ancaman global, kami menyediakan solusi komprehensif yang dapat disesuaikan dengan skala dan kompleksitas kebutuhan klien.
                 </p>
-
             </div>
         </section>
 
-        <!-- Daftar Layanan -->
-        <section id="daftar-layanan" class="section">
+        <section id="daftar-layanan" class="section layanan-bg">
             <div class="container">
-
-                <p class="eyebrow">WHAT WE DO</p>
-
-                <h2>Ruang Lingkup Layanan</h2>
-
-                <p>
-                    Gambaran layanan perusahaan.
-                    Foto merupakan ilustrasi.
-                </p>
+                <p class="eyebrow" data-i18n="layanan.list.eyebrow">APA YANG KAMI LAKUKAN</p>
+                <h2 data-i18n="layanan.list.title">Ruang Lingkup Layanan</h2>
+                <p data-i18n="layanan.list.desc">Gambaran layanan perusahaan. Foto merupakan ilustrasi.</p>
 
                 <div class="cards">
-
-                    <!-- Layanan 1 -->
                     <article class="service-card">
-
-                        <img
-                            class="service-image"
-                            src="https://images.steamusercontent.com/ugc/22064018964967674/F15FC3710EF5565E9E7D468F56F9765789B783DE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
-                            alt="Ilustrasi perjalanan udara"
-                            width="900"
-                            height="600"
-                            loading="lazy"
-                        >
-
+                        <img class="service-image" src="https://pbs.twimg.com/media/GWKemZGagAAzxGp?format=jpg&name=4096x4096" alt="Ilustrasi perjalanan udara" data-i18n-alt="layanan.card1.alt" width="900" height="600" loading="lazy">
                         <div class="service-content">
-
-                            <span class="card-number">
-                                01 / PROTECTION
-                            </span>
-
-                            <h3>Perlindungan Personel Tingkat Tinggi</h3>
-
-                            <p>
-                                Perencanaan keselamatan perjalanan,
-                                pendampingan personel, dan koordinasi
-                                komunikasi keselamatan.
-                            </p>
-
-                            <a href="profil.html#kontak">
-                                Informasi layanan
-                                <span aria-hidden="true">↗</span>
-                            </a>
-
+                            <span class="card-number" data-i18n="layanan.card1.num">01 / PERLINDUNGAN</span>
+                            <h3 data-i18n="layanan.card1.title">Perlindungan Personel Tingkat Tinggi</h3>
+                            <p data-i18n="layanan.card1.desc">Perencanaan keselamatan perjalanan, pendampingan personel, dan koordinasi komunikasi keselamatan.</p>
+                            <a href="profil.html#kontak"><span data-i18n="layanan.card.cta">Informasi layanan</span><span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
 
-                    <!-- Layanan 2 -->
                     <article class="service-card">
-
-                        <img
-                            class="service-image"
-                            src="https://images.steamusercontent.com/ugc/22055778834777525/68FD12692650545AEA4F8B4844C490BB27F51218/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
-                            alt="Ilustrasi gedung perkantoran"
-                            width="900"
-                            height="600"
-                            loading="lazy"
-                        >
-
+                        <img class="service-image" src="https://pbs.twimg.com/media/GClqzRZbsAAyVD1?format=jpg&name=4096x4096" alt="Ilustrasi gedung perkantoran" data-i18n-alt="layanan.card2.alt" width="900" height="600" loading="lazy">
                         <div class="service-content">
-
-                            <span class="card-number">
-                                02 / FACILITIES
-                            </span>
-
-                            <h3>Keamanan Fasilitas</h3>
-
-                            <p>
-                                Peninjauan kontrol akses, evaluasi
-                                prosedur keselamatan, dan rekomendasi
-                                pengamanan fasilitas.
-                            </p>
-
-                            <a href="profil.html#kontak">
-                                Informasi layanan
-                                <span aria-hidden="true">↗</span>
-                            </a>
-
+                            <span class="card-number" data-i18n="layanan.card2.num">02 / FASILITAS</span>
+                            <h3 data-i18n="layanan.card2.title">Keamanan Fasilitas</h3>
+                            <p data-i18n="layanan.card2.desc">Peninjauan kontrol akses, evaluasi prosedur keselamatan, dan rekomendasi pengamanan fasilitas.</p>
+                            <a href="profil.html#kontak"><span data-i18n="layanan.card.cta">Informasi layanan</span><span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
 
-                    <!-- Layanan 3 -->
                     <article class="service-card">
-
-                        <img
-                            class="service-image"
-                            src="https://scontent-cgk2-1.xx.fbcdn.net/v/t39.30808-6/533428993_3185999608230452_463466772558959229_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeF0JA9vQ9Ovt0RNZ25zZh1ini34-MBJJB-eLfj4wEkkHxS7NZIMg3O3lr8eHGfJoFfIlGL9TCDW0qXz3SmL8dyj&_nc_ohc=PiQ_vxShZlMQ7kNvwEMkpA-&_nc_oc=AdooLE1xzXvPELhQ2lnEap7oZFRF9UNUij4FOZ8TM4TCnRY4TQN5HOiiVqgBmWpYwNgvWXSftDfrBEmT-0Uq8-Se&_nc_zt=23&_nc_ht=scontent-cgk2-1.xx&_nc_gid=7oTXImvB6aTXm4iigLpNgg&_nc_ss=7b2a8&oh=00_AQOFNRpG5vZxbDdGdoQzHl2-xTfs2Kg4q5qufSDm22b53w&oe=6AE01590"
-                            alt="Ilustrasi analisis dokumen"
-                            width="900"
-                            height="600"
-                            loading="lazy"
-                        >
-
+                        <img class="service-image" src="https://pbs.twimg.com/media/GDKCEcbboAA4OaO?format=jpg&name=4096x4096" alt="Ilustrasi analisis dokumen" data-i18n-alt="layanan.card3.alt" width="900" height="600" loading="lazy">
                         <div class="service-content">
-
-                            <span class="card-number">
-                                03 / Special Operations
-                            </span>
-
-                            <h3>Layanan Operasi Khusus</h3>
-
-                            <p>
-                                Identifikasi risiko ancaman,
-                                penyelamatan sandera,
-                                dan misi sabotase serta misi kontra-intelijen.
-                            </p>
-
-                            <a href="profil.html#kontak">
-                                Informasi layanan
-                                <span aria-hidden="true">↗</span>
-                            </a>
-
+                            <span class="card-number" data-i18n="layanan.card3.num">03 / OPERASI KHUSUS</span>
+                            <h3 data-i18n="layanan.card3.title">Layanan Operasi Khusus</h3>
+                            <p data-i18n="layanan.card3.desc">Identifikasi risiko ancaman, penyelamatan sandera, dan misi sabotase serta misi kontra-intelijen.</p>
+                            <a href="profil.html#kontak"><span data-i18n="layanan.card.cta">Informasi layanan</span><span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
-
                 </div>
             </div>
         </section>
 
-        <!-- Program Pelatihan -->
         <section class="section white" id="program">
             <div class="container">
-
-                <h2>Program Pelatihan</h2>
-
-                <p>
-                    Data simulasi, bukan jadwal pendaftaran
-                    atau sertifikasi resmi.
-                </p>
-
+                <h2 data-i18n="layanan.program.title">Program Pelatihan</h2>
+                <p data-i18n="layanan.program.desc">Data simulasi, bukan jadwal pendaftaran atau sertifikasi resmi.</p>
                 <div class="table-wrap">
-
                     <table>
-                        <caption>
-                            Daftar program pelatihan simulasi
-                        </caption>
-
+                        <caption data-i18n="layanan.program.caption">Daftar program pelatihan simulasi</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Kode</th>
-                                <th scope="col">Program</th>
-                                <th scope="col">Durasi</th>
-                                <th scope="col">Peserta</th>
+                                <th scope="col" data-i18n="layanan.program.th.code">Kode</th>
+                                <th scope="col" data-i18n="layanan.program.th.program">Program</th>
+                                <th scope="col" data-i18n="layanan.program.th.duration">Durasi</th>
+                                <th scope="col" data-i18n="layanan.program.th.participants">Peserta</th>
                             </tr>
                         </thead>
-
                         <tbody>
                             <tr>
                                 <th scope="row">TSG-01</th>
-                                <td>
-                                    Kesadaran Keamanan Perjalanan
-                                </td>
-                                <td>1 hari</td>
-                                <td>Staf organisasi</td>
+                                <td data-i18n="layanan.program.row1.program">Kesadaran Keamanan Perjalanan</td>
+                                <td data-i18n="layanan.program.row1.duration">1 hari</td>
+                                <td data-i18n="layanan.program.row1.participants">Staf organisasi</td>
                             </tr>
-
                             <tr>
                                 <th scope="row">TSG-02</th>
-                                <td>
-                                    Komunikasi Tanggap Darurat
-                                </td>
-                                <td>2 hari</td>
-                                <td>Tim operasional</td>
+                                <td data-i18n="layanan.program.row2.program">Komunikasi Tanggap Darurat</td>
+                                <td data-i18n="layanan.program.row2.duration">2 hari</td>
+                                <td data-i18n="layanan.program.row2.participants">Tim operasional</td>
                             </tr>
-
                             <tr>
                                 <th scope="row">TSG-03</th>
-                                <td>
-                                    Dasar Manajemen Risiko
-                                </td>
-                                <td>2 hari</td>
-                                <td>Koordinator proyek</td>
+                                <td data-i18n="layanan.program.row3.program">Dasar Manajemen Risiko</td>
+                                <td data-i18n="layanan.program.row3.duration">2 hari</td>
+                                <td data-i18n="layanan.program.row3.participants">Koordinator proyek</td>
                             </tr>
-
                             <tr>
                                 <th scope="row">TSG-04</th>
-                                <td>Keselamatan Fasilitas</td>
-                                <td>1 hari</td>
-                                <td>Pengelola fasilitas</td>
+                                <td data-i18n="layanan.program.row4.program">Keselamatan Fasilitas</td>
+                                <td data-i18n="layanan.program.row4.duration">1 hari</td>
+                                <td data-i18n="layanan.program.row4.participants">Pengelola fasilitas</td>
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </section>
 
-        <!-- Pendekatan Kerja -->
         <section class="section">
             <div class="container split">
-
                 <div>
-                    <h2>Pendekatan Kerja</h2>
-
+                    <h2 data-i18n="layanan.approach.title">Pendekatan Kerja</h2>
                     <ol class="values">
-                        <li>
-                            Memahami kebutuhan organisasi.
-                        </li>
-
-                        <li>
-                            Mengidentifikasi risiko dan prioritas
-                            keselamatan.
-                        </li>
-
-                        <li>
-                            Menyusun rekomendasi dan rencana dukungan.
-                        </li>
-
-                        <li>
-                            Melakukan evaluasi berkelanjutan.
-                        </li>
+                        <li data-i18n="layanan.approach.li1">Memahami kebutuhan organisasi.</li>
+                        <li data-i18n="layanan.approach.li2">Mengidentifikasi risiko dan prioritas keselamatan.</li>
+                        <li data-i18n="layanan.approach.li3">Menyusun rekomendasi dan rencana dukungan.</li>
+                        <li data-i18n="layanan.approach.li4">Melakukan evaluasi berkelanjutan.</li>
                     </ol>
                 </div>
-
-                <!-- Kotak Kontak -->
                 <aside class="contact-box">
-
-                    <h3>Profesionalisme &amp; Akuntabilitas</h3>
-
-                    <p>
-                        Profil simulasi ini mengutamakan kepatuhan
-                        hukum dan keselamatan masyarakat sipil.
-                    </p>
-
-                    <a class="button" href="profil.html#kontak">
-                        Kontak Simulasi
-                    </a>
-
+                    <h3 data-i18n="layanan.aside.title">Profesionalisme &amp; Akuntabilitas</h3>
+                    <p data-i18n="layanan.aside.desc">Profil simulasi ini mengutamakan kepatuhan hukum dan keselamatan masyarakat sipil.</p>
+                    <a class="button" href="profil.html#kontak" data-i18n="layanan.aside.cta">Kontak Simulasi</a>
                 </aside>
-
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-inner">
-
             <div>
-                <p>
-                    © 2026 Triskelion Security Group —
-                    proyek akademik.
-                </p>
-
-                <p>
-                    Seluruh data perusahaan fiktif.
-                    Foto bersifat ilustratif.
-                </p>
+                <p data-i18n="footer.copy">© 2026 Triskelion Security Group — A Triskelion Corporation Subsidiaries.</p>
+                <p data-i18n="footer.credit">Created by Heartbreak_0_1 / Jean Michel</p>
             </div>
-
             <p>
-                <a href="profil.html#kontak">
-                    Kontak simulasi
-                </a>
+                <a href="profil.html#kontak" data-i18n="footer.contact">Kontak simulasi</a>
             </p>
-
         </div>
     </footer>
-
 </body>
 </html>
