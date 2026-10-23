@@ -123,6 +123,18 @@ nav a[aria-current="page"] {
    4. HERO HALAMAN BERANDA
 ========================================= */
 
+/* Slideshow dipindah keluar hero, diposisikan fixed di belakang */
+.parallax-slideshow {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    will-change: transform, opacity;
+    transition: opacity 0.3s ease-out;
+    overflow: hidden;
+}
+
+/* Hero sekarang hanya berisi konten & overlay */
 .hero {
     position: relative;
     display: flex;
@@ -131,16 +143,11 @@ nav a[aria-current="page"] {
     padding: 80px 0;
     overflow: hidden;
     isolation: isolate;
-    background: var(--navy);
+    background: transparent; /* background pindah ke slideshow */
     color: white;
 }
 
-.hero-slideshow {
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-}
-
+/* Setiap slide */
 .hero-slide {
     position: absolute;
     inset: 0;
@@ -171,6 +178,7 @@ nav a[aria-current="page"] {
     transform: scale(1.08);
 }
 
+/* Overlay gelap tetap di dalam hero */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -207,6 +215,43 @@ nav a[aria-current="page"] {
     line-height: 1.85;
 }
 
+/* =========================================
+   RESPONSIVE — Nonaktifkan parallax di HP
+   (Parallax dengan JS sering berat di mobile)
+========================================= */
+
+@media (max-width: 760px) {
+    .parallax-slideshow {
+        /* Kembalikan ke posisi absolut agar tidak berat di mobile */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 600px; /* setinggi hero mobile */
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 60px 0;
+        background-position: center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(9, 19, 27, 0.92),
+            rgba(9, 19, 27, 0.60)
+        );
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 8vw, 46px);
+    }
+
+    .hero .hero-description {
+        font-size: 15px;
+    }
+}
 /* =========================================
    5. JUDUL HALAMAN (Profil/Layanan)
 ========================================= */
