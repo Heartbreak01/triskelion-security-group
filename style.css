@@ -717,7 +717,7 @@ address {
     .hero {
         min-height: 600px;
         padding: 60px 0;
-        background-position: center;
+        background-position: right;
     }
 
     .hero-overlay {
