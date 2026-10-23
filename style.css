@@ -224,7 +224,7 @@ nav a[aria-current="page"] {
             rgba(9, 19, 27, 0.85),
             rgba(9, 19, 27, 0.85)
         ),
-        url("assets/about.jpg"); /* Ganti gambar jika perlu */
+        url("assets/profil.jpg"); /* Ganti gambar jika perlu */
     
     background-size: cover;
     background-position: center;
@@ -272,7 +272,7 @@ nav a[aria-current="page"] {
             rgba(9, 19, 27, 0.75) 50%,
             rgba(9, 19, 27, 0.40) 100%
         ),
-        url("assets/Triskelion\ Profile.jpg"); /* Pastikan nama file sesuai */
+        url("assets/Triskelion\ profil about.jpg"); /* Pastikan nama file sesuai */
 
     background-size: cover;
     background-position: center;
