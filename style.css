@@ -388,7 +388,7 @@ h3 {
 .capabilities-bg {
     position: relative;
     color: white;
-    min-height: 100px;
+    min-height: 900px;
     display: flex;
     align-items: center;
     background-size: cover;
