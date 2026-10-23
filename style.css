@@ -388,21 +388,21 @@ h3 {
 .capabilities-bg {
     position: relative;
     color: white;
-    min-height: 100px;
+    min-height: 900px;
     display: flex;
     align-items: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /*Tambahan Efek Parallax */
+    background-attachment: fixed;
 }
 
 /* -- Tentang Kami -- */
 .about-bg {
     background-color: var(--navy);
     background-image:
-         linear-gradient(
-            rgba(16, 31, 43, 0.60), 
+        linear-gradient(
+            rgba(16, 31, 43, 0.60),
             rgba(16, 31, 43, 0.60)
         ),
         url("assets/about.jpg");
@@ -413,7 +413,7 @@ h3 {
     background-color: var(--dark);
     background-image:
         linear-gradient(
-            rgba(16, 31, 43, 0.60), 
+            rgba(16, 31, 43, 0.60),
             rgba(16, 31, 43, 0.60)
         ),
         url("assets/Kapabilitas.jpg");
