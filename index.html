@@ -42,17 +42,14 @@
     <!-- Konten Utama -->
     <main id="konten">
 
-        <!-- ==============================================
-             SLIDESHOW PARALLAX (Dipindah ke luar .hero)
-             ============================================== -->
-        <div class="hero-slideshow parallax-slideshow" aria-hidden="true">
-            <div class="hero-slide slide-1 active"></div>
-            <div class="hero-slide slide-2"></div>
-            <div class="hero-slide slide-3"></div>
-        </div>
-
-        <!-- Hero Section (Konten saja, tanpa slideshow di dalam) -->
+        <!-- Hero Section dengan Slideshow -->
         <section class="hero">
+
+            <div class="hero-slideshow" aria-hidden="true">
+                <div class="hero-slide slide-1 active"></div>
+                <div class="hero-slide slide-2"></div>
+                <div class="hero-slide slide-3"></div>
+            </div>
 
             <div class="hero-overlay"></div>
 
@@ -196,74 +193,23 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // ==============================================
-            // 1. SLIDESHOW OTOMATIS
-            // ==============================================
             const slides = document.querySelectorAll(".hero-slide");
+
+            if (slides.length <= 1) return;
+
             const reduceMotion = window.matchMedia(
                 "(prefers-reduced-motion: reduce)"
             ).matches;
 
-            if (slides.length > 1 && !reduceMotion) {
-                let currentSlide = 0;
+            if (reduceMotion) return;
 
-                setInterval(function () {
-                    slides[currentSlide].classList.remove("active");
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    slides[currentSlide].classList.add("active");
-                }, 6000);
-            }
+            let currentSlide = 0;
 
-            // ==============================================
-            // 2. EFEK PARALLAX SAAT SCROLL
-            // ==============================================
-            const parallaxSlideshow = document.querySelector(".parallax-slideshow");
-            const heroSection = document.querySelector(".hero");
-
-            // Jika reduced motion, matikan parallax
-            if (reduceMotion || !parallaxSlideshow || !heroSection) return;
-
-            let ticking = false;
-
-            function updateParallax() {
-                // Ambil posisi scroll saat ini
-                const scrollY = window.scrollY || window.pageYOffset;
-
-                // Ambil tinggi hero (agar slideshow hilang setelah hero lewat)
-                const heroHeight = heroSection.offsetHeight;
-
-                // Hanya jalankan parallax selama hero masih terlihat
-                if (scrollY <= heroHeight) {
-                    // Faktor parallax: 0.4 = gambar bergerak 40% kecepatan scroll
-                    // (semakin kecil, semakin lambat gambar bergerak)
-                    const parallaxSpeed = 0.4;
-                    const translateY = scrollY * parallaxSpeed;
-
-                    // Terapkan transform ke slideshow
-                    parallaxSlideshow.style.transform =
-                        `translate3d(0, ${translateY}px, 0)`;
-
-                    // Opsional: fade out slideshow saat scroll mendekati akhir hero
-                    const opacity = 1 - (scrollY / heroHeight) * 0.5;
-                    parallaxSlideshow.style.opacity = Math.max(opacity, 0);
-                } else {
-                    // Setelah hero lewat, hentikan parallax & sembunyikan
-                    parallaxSlideshow.style.transform = "translate3d(0, 0, 0)";
-                    parallaxSlideshow.style.opacity = "0";
-                }
-
-                ticking = false;
-            }
-
-            window.addEventListener("scroll", function () {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateParallax);
-                    ticking = true;
-                }
-            }, { passive: true });
-
-            // Jalankan sekali saat halaman dimuat
-            updateParallax();
+            setInterval(function () {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }, 6000);
         });
     </script>
 </body>
