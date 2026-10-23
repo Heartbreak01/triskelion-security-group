@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Proyek akademik profil perusahaan fiktif Triskelion Security Group."
+    >
+
+    <title>Beranda | Triskelion Security Group</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skip Link -->
+    <a class="skip-link" href="#konten">
+        Lewati ke konten
+    </a>
+
+    <!-- Header dan Navigasi -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                TRISKELION
+                <span>SECURITY GROUP</span>
+            </a>
+
+            <nav aria-label="Navigasi utama">
+                <a href="index.html" aria-current="page">Beranda</a>
+                <a href="profil.html">Profil</a>
+                <a href="layanan.html">Layanan</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main id="konten">
+
+        <!-- Hero Section dengan Slideshow -->
+        <section class="hero">
+
+            <div class="hero-slideshow" aria-hidden="true">
+                <div class="hero-slide slide-1 active"></div>
+                <div class="hero-slide slide-2"></div>
+                <div class="hero-slide slide-3"></div>
+            </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <p class="eyebrow">International security partner</p>
+
+                <h1>
+                    Keamanan terencana.<br>
+                    Perlindungan berintegritas.
+                </h1>
+
+                <p class="hero-description">
+                    Triskelion Security Group adalah perusahaan
+                    fiktif di bidang keamanan internasional dan
+                    Private Military Contractor (PMC), dengan
+                    fokus pada perlindungan personel, pengamanan
+                    fasilitas, dan konsultasi risiko.
+                </p>
+
+                <a class="button" href="profil.html">
+                    Kenali Perusahaan
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tentang Kami -->
+        <section class="section about-bg">
+            <div class="container split">
+
+                <div>
+                    <p class="eyebrow">Tentang kami</p>
+
+                    <h2>
+                        Mendukung aktivitas di lingkungan
+                        yang menantang.
+                    </h2>
+                </div>
+
+                <div>
+                    <p>
+                        Dalam skenario perusahaan ini, Triskelion
+                        membantu organisasi internasional,
+                        perusahaan, dan lembaga kemanusiaan
+                        merencanakan kebutuhan keamanan dengan
+                        pendekatan yang terukur.
+                    </p>
+
+                    <p>
+                        Ruang lingkup profil meliputi asesmen risiko,
+                        perlindungan defensif, dukungan logistik,
+                        dan pelatihan keselamatan. Seluruh layanan
+                        digambarkan dengan mengutamakan kepatuhan
+                        hukum dan penghormatan hak asasi manusia.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Kapabilitas Utama -->
+        <section class="section capabilities-bg">
+            <div class="container">
+
+                <p class="eyebrow">Kapabilitas utama</p>
+
+                <h2>Perlindungan yang terintegrasi</h2>
+
+                <div class="cards">
+
+                    <article class="card">
+                        <span class="number">01 / PROTECTION</span>
+                        <h3>Pengamanan Personel</h3>
+                        <p>
+                            Perencanaan perlindungan personel dan
+                            pendampingan perjalanan untuk kebutuhan
+                            organisasi.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="number">02 / RISK</span>
+                        <h3>Konsultasi Risiko</h3>
+                        <p>
+                            Identifikasi risiko dan penyusunan
+                            rekomendasi keamanan bagi fasilitas
+                            maupun kegiatan.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="number">03 / READINESS</span>
+                        <h3>Pelatihan Keselamatan</h3>
+                        <p>
+                            Program kesadaran situasional,
+                            komunikasi darurat, dan kesiapsiagaan
+                            keselamatan.
+                        </p>
+                    </article>
+
+                </div>
+
+                <a class="button" href="layanan.html">
+                    Lihat Rincian Layanan
+                </a>
+
+                <aside class="notice">
+                    Website ini dibuat untuk tugas HTML dan CSS.
+                    Seluruh informasi perusahaan merupakan simulasi,
+                    bukan penawaran jasa nyata.
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+
+            <div>
+                <p>© 2026 Triskelion Security Group — proyek akademik.</p>
+                <p>
+                    Perusahaan, alamat, dan data pada website
+                    ini bersifat fiktif.
+                </p>
+            </div>
+
+            <p>
+                <a href="profil.html#kontak">Kontak simulasi</a>
+                ·
+                <a href="layanan.html">Layanan</a>
+            </p>
+
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll(".hero-slide");
+
+            if (slides.length <= 1) return;
+
+            const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (reduceMotion) return;
+
+            let currentSlide = 0;
+
+            setInterval(function () {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }, 6000);
+        });
+    </script>
+</body>
+</html>

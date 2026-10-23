@@ -1,0 +1,835 @@
+/* =========================================
+   1. VARIABEL DAN RESET
+========================================= */
+
+:root {
+    --navy: #101f2b;
+    --dark: #09131b;
+    --gold: #d1af6b;
+    --paper: #f3f5f6;
+    --text: #243743;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--paper);
+}
+
+a {
+    color: #77551e;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* =========================================
+   2. SKIP LINK DAN AKSESIBILITAS
+========================================= */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: white;
+    padding: 12px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+a:focus-visible {
+    outline: 3px solid #2983b5;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   3. HEADER DAN NAVIGASI
+========================================= */
+
+.site-header {
+    position: relative;
+    z-index: 10;
+    background: var(--dark);
+    color: white;
+    border-bottom: 3px solid var(--gold);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.3;
+}
+
+.brand span {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    color: #e4e9ed;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+/* =========================================
+   4. HERO HALAMAN BERANDA
+========================================= */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 900px;
+    padding: 80px 0;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--navy);
+    color: white;
+}
+
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1);
+    transition:
+        opacity 1.5s ease-in-out,
+        transform 7s linear;
+}
+
+.hero-slide.slide-1 {
+    background-image: url("assets/Triskelion.jpg");
+}
+
+.hero-slide.slide-2 {
+    background-image: url("assets/Triskelion-2.jpg");
+}
+
+.hero-slide.slide-3 {
+    background-image: url("assets/Triskelion-3.jpg");
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(9, 19, 27, 0.94) 0%,
+        rgba(9, 19, 27, 0.78) 38%,
+        rgba(9, 19, 27, 0.40) 68%,
+        rgba(9, 19, 27, 0.20) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+.hero h1 {
+    max-width: 720px;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.12;
+    margin: 18px 0 24px;
+    color: white;
+}
+
+.hero .hero-description {
+    max-width: 520px;
+    color: #e1e8ed;
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   5. JUDUL HALAMAN (Profil/Layanan)
+========================================= */
+
+.page-heading {
+    padding: 46px 0;
+    background: var(--navy);
+    color: white;
+}
+
+.page-heading h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 14px 0 20px;
+}
+
+.page-heading .eyebrow {
+    color: #e4c17e;
+}
+
+.page-heading p:last-child {
+    max-width: 720px;
+    color: #d4dfe6;
+}
+
+/* =========================================
+   6. HERO PROFIL PERUSAHAAN
+========================================= */
+
+.profile-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    padding: 80px 0;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--navy);
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(9, 19, 27, 0.96) 0%,
+            rgba(9, 19, 27, 0.86) 35%,
+            rgba(9, 19, 27, 0.60) 65%,
+            rgba(9, 19, 27, 0.30) 100%
+        ),
+        url("assets/Triskelion\ Profile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.profile-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        0deg,
+        rgba(9, 19, 27, 0.40),
+        transparent 50%
+    );
+}
+
+.profile-content {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+.profile-content h2 {
+    max-width: 750px;
+    color: white;
+    font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.15;
+    margin: 16px 0 28px;
+}
+
+.profile-content > p:not(.eyebrow) {
+    max-width: 700px;
+    color: #e1e8ed;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.profile-vision {
+    max-width: 700px;
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 3px solid var(--gold);
+}
+
+.profile-vision h3 {
+    color: var(--gold);
+    font-size: 21px;
+    margin: 0 0 8px;
+}
+
+.profile-vision p {
+    color: #e1e8ed;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* =========================================
+   7. TOMBOL
+========================================= */
+
+.button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 13px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 3px;
+    margin-top: 18px;
+    transition: background 0.2s ease;
+}
+
+.button:hover {
+    background: #e3c88f;
+}
+
+/* =========================================
+   8. BAGIAN UMUM
+========================================= */
+
+.section {
+    padding: 70px 0;
+}
+
+.white {
+    background: white;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-top: 0;
+    color: var(--navy);
+}
+
+h3 {
+    line-height: 1.35;
+}
+
+.eyebrow {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.split p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   9. SECTION DENGAN BACKGROUND GAMBAR
+   (Tentang Kami & Kapabilitas Utama)
+========================================= */
+
+.about-bg,
+.capabilities-bg {
+    position: relative;
+    color: white;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /*Tambahan Efek Parallax */
+}
+
+/* -- Tentang Kami -- */
+.about-bg {
+    background-color: var(--navy);
+    background-image:
+         linear-gradient(
+            rgba(16, 31, 43, 0.60), 
+            rgba(16, 31, 43, 0.60)
+        ),
+        url("assets/about.jpg");
+}
+
+/* -- Kapabilitas Utama -- */
+.capabilities-bg {
+    background-color: var(--dark);
+    background-image:
+        linear-gradient(
+            rgba(16, 31, 43, 0.60), 
+            rgba(16, 31, 43, 0.60)
+        ),
+        url("assets/Kapabilitas.jpg");
+}
+
+/* Warna teks di atas background gelap */
+.about-bg h2,
+.capabilities-bg h2 {
+    color: white;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.about-bg .eyebrow,
+.capabilities-bg .eyebrow {
+    color: var(--gold);
+}
+
+.about-bg p,
+.capabilities-bg p {
+    color: #dce3e7;
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   10. KARTU KAPABILITAS
+========================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.card {
+    padding: 32px;
+    background: white;
+    border: 1px solid #dde3e6;
+    border-top: 3px solid var(--gold);
+    border-radius: 4px;
+}
+
+.card h3 {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.card p {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.number {
+    font-size: 13px;
+    color: #77551e;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Kartu transparan (glass) khusus di area Kapabilitas */
+.capabilities-bg .card {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-top: 3px solid var(--gold);
+    color: white;
+}
+
+.capabilities-bg .card h3 {
+    color: var(--gold);
+}
+
+.capabilities-bg .card p {
+    color: #e1e8ed;
+}
+
+.capabilities-bg .card .number {
+    color: #f0d9a8;
+}
+
+/* =========================================
+   11. PEMBERITAHUAN
+========================================= */
+
+.notice {
+    background: #f3ead7;
+    border-left: 4px solid #987131;
+    padding: 18px 22px;
+    margin-top: 32px;
+    font-size: 15px;
+    color: var(--text);
+}
+
+/* =========================================
+   12. TABEL INFORMASI PERUSAHAAN
+========================================= */
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid #d4dde2;
+    background: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+}
+
+caption {
+    text-align: left;
+    padding: 18px;
+    font-weight: bold;
+    color: var(--navy);
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #dce3e7;
+}
+
+thead {
+    background: var(--navy);
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #f2f5f7;
+}
+
+/* =========================================
+   13. MISI, NILAI, DAN KONTAK
+========================================= */
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #536773;
+}
+
+.values {
+    padding-left: 22px;
+}
+
+.values li {
+    margin-bottom: 10px;
+}
+
+.contact-box {
+    padding: 30px;
+    background: white;
+    border: 1px solid #dce3e7;
+}
+
+address {
+    font-style: normal;
+}
+
+/* =========================================
+   14. KARTU KHUSUS HALAMAN LAYANAN
+========================================= */
+
+#daftar-layanan .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+#daftar-layanan .service-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    background: white;
+    border: 1px solid #dde3e6;
+    border-radius: 6px;
+    box-shadow: 0 5px 16px #101f2b0d;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#daftar-layanan .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px #101f2b1f;
+}
+
+#daftar-layanan .service-image {
+    display: block;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-bottom: 3px solid var(--gold);
+}
+
+#daftar-layanan .service-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 25px;
+}
+
+#daftar-layanan .card-number {
+    display: block;
+    margin-bottom: 12px;
+    color: #77551e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+#daftar-layanan h3 {
+    margin: 0 0 14px;
+    color: var(--navy);
+    font-size: 22px;
+}
+
+#daftar-layanan .service-content p {
+    margin: 0 0 24px;
+    color: #536773;
+    font-size: 14px;
+}
+
+#daftar-layanan .service-content a {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #dde3e6;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* =========================================
+   15. FOOTER
+========================================= */
+
+.site-footer {
+    background: var(--dark);
+    color: #c8d4db;
+    padding: 30px 0;
+    font-size: 13px;
+}
+
+.site-footer a {
+    color: var(--gold);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.site-footer p {
+    margin: 4px 0;
+}
+
+/* =========================================
+   16. RESPONSIVE (TABLET & HP)
+========================================= */
+
+@media (max-width: 900px) {
+    .about-bg,
+    .capabilities-bg {
+        min-height: 700px;
+    }
+
+    .about-bg h2,
+    .capabilities-bg h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .header-inner,
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 600px;
+        padding: 60px 0;
+        background-position: center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(9, 19, 27, 0.92),
+            rgba(9, 19, 27, 0.60)
+        );
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 8vw, 46px);
+    }
+
+    .hero .hero-description {
+        font-size: 15px;
+    }
+
+    /* Profil Hero */
+    .profile-hero {
+        min-height: 600px;
+        padding: 60px 0;
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(9, 19, 27, 0.91),
+                rgba(9, 19, 27, 0.72)
+            ),
+            url("assets/Triskelion.jpg");
+        background-position: center;
+    }
+
+    .profile-content h2 {
+        font-size: clamp(34px, 8vw, 44px);
+    }
+
+    .profile-content > p:not(.eyebrow) {
+        font-size: 15px;
+    }
+
+    /* Section dengan background gambar */
+    .about-bg,
+    .capabilities-bg {
+        min-height: auto;
+        padding: 80px 0;
+        background-attachment: scroll;
+    }
+
+    .about-bg h2,
+    .capabilities-bg h2 {
+        font-size: 30px;
+    }
+
+    .about-bg p,
+    .capabilities-bg p {
+        font-size: 15px;
+    }
+
+    /* Umum */
+    .section {
+        padding: 50px 0;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .split,
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .split p {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 26px;
+    }
+
+    #daftar-layanan .cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-box {
+        padding: 22px;
+    }
+}
+
+/* =========================================
+   17. PENGATURAN ANIMASI
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero-slide,
+    .hero-slide.active {
+        transition: none;
+        transform: none;
+    }
+
+    .button,
+    #daftar-layanan .service-card {
+        transition: none;
+    }
+
+    #daftar-layanan .service-card:hover {
+        transform: none;
+    }
+}
