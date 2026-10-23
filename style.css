@@ -139,7 +139,7 @@ nav a[aria-current="page"] {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 900px;
+    min-height: 1050px;
     padding: 80px 0;
     overflow: hidden;
     isolation: isolate;
@@ -433,7 +433,7 @@ h3 {
 .capabilities-bg {
     position: relative;
     color: white;
-    min-height: 900px;
+    min-height: 1050px;
     display: flex;
     align-items: center;
     background-size: cover;
